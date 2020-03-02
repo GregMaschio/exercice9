@@ -22,6 +22,36 @@
 	margin: 0 0 1.5em;
 }
 
-#primary-menu {
-	display:none;
+#primary-menu, .entry-title, .post-edit-link {
+	display: none;
+}
+
+.post-thumbnail:first-of-type{
+	width:100%; 
+	height:30vh;
+   overflow:hidden; 
+}
+
+.posts-conferences {
+	display:flex;
+	flex-direction: row;
+	margin-bottom:3em;
+}
+
+.texte-conferences{
+	display:flex;
+	flex-direction: column;
+	width:70vw;
+	margin-left: 2em;
+}
+
+.conteneur-nouvelles{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-around;
+}
+
+.posts-nouvelles {
+	display:flex;
+	flex-direction: column;
 }

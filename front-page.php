@@ -44,10 +44,13 @@ get_header();
         // The Loop
         while ( $query1->have_posts() ) {
             $query1->the_post();
+            echo '<div class ="posts-conferences">';
             the_post_thumbnail('thumbnail');
-            echo '<h3>' . get_the_title() . '</h3>';
-            echo '<h3>' . get_the_date() . '</h3>';
+            echo '<div class ="texte-conferences">';
+            echo '<h3> <a href ="' . get_permalink($id) . '">' . get_the_title() ." - ". get_the_date() . '</a></h3>';
             echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>'; 
+            echo '</div>';
+            echo '</div>';
         }
         
         /* Restore original Post Data 
@@ -67,14 +70,16 @@ get_header();
         );
         $query2 = new WP_Query( $args2 );
         
+        echo '<div class ="conteneur-nouvelles">';
         // The 2nd Loop
         while ( $query2->have_posts() ) {
+            echo '<div class ="posts-nouvelles">';
             $query2->the_post();
-            echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
+            echo '<h3> <a href ="'. get_permalink($id) . '">' . get_the_title( $query2->post->ID ) . '</h3>';
             the_post_thumbnail('thumbnail');
-
+            echo '</div>';
         }
-        
+        echo '</div>';
         // Restore original Post Data
         wp_reset_postdata();
         
