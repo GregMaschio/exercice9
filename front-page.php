@@ -44,6 +44,7 @@ get_header();
         // The Loop
         while ( $query1->have_posts() ) {
             $query1->the_post();
+            the_post_thumbnail('thumbnail');
             echo '<h3>' . get_the_title() . '</h3>';
             echo '<h3>' . get_the_date() . '</h3>';
             echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>'; 
@@ -58,10 +59,10 @@ get_header();
         wp_reset_postdata();
         
         /////////////////////////////////EVENEMENT
-        echo '<h1>' . category_description(get_category_by_slug('nouvelles')) . '</h1>';        
+        echo '<h1>' . category_description(get_category_by_slug('nouvelle')) . '</h1>';        
         /* The 2nd Query (without global var) */
         $args2 = array(
-            "category_name" => "nouvelles",
+            "category_name" => "nouvelle",
             "posts_per_page" => 4
         );
         $query2 = new WP_Query( $args2 );
@@ -70,6 +71,7 @@ get_header();
         while ( $query2->have_posts() ) {
             $query2->the_post();
             echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
+            the_post_thumbnail('thumbnail');
 
         }
         
