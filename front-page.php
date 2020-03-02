@@ -30,7 +30,7 @@ get_header();
 			endif;
 
         endwhile; // End of the loop.
-        /////////////////////////////////NOUVELLE
+        /////////////////////////////////CONFERENCES
         echo '<h1>' . category_description(get_category_by_slug('conference')) . '</h1>';
         // The Query
         $args = array(
@@ -61,7 +61,7 @@ get_header();
         */
         wp_reset_postdata();
         
-        /////////////////////////////////EVENEMENT
+        /////////////////////////////////NOUVELLES
         echo '<h1>' . category_description(get_category_by_slug('nouvelle')) . '</h1>';        
         /* The 2nd Query (without global var) */
         $args2 = array(
@@ -75,21 +75,19 @@ get_header();
         while ( $query2->have_posts() ) {
             echo '<div class ="posts-nouvelles">';
             $query2->the_post();
-            echo '<h3> <a href ="'. get_permalink($id) . '">' . get_the_title( $query2->post->ID ) . '</h3>';
+            echo '<h3> <a href ="'. get_permalink($id) . '">' . get_the_title( $query2->post->ID ) . '</a></h3>';
             the_post_thumbnail('thumbnail');
             echo '</div>';
         }
         echo '</div>';
         // Restore original Post Data
         wp_reset_postdata();
-        
- 
 		?>
-    
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
+get_template_part('template-parts/content', 'evenement');
 get_sidebar();
 get_footer();
