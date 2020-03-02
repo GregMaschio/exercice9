@@ -22,7 +22,11 @@
 	margin: 0 0 1.5em;
 }
 
-#primary-menu, .entry-title, .post-edit-link {
+#primary-menu, .menu, .nav-menu {
+	display: block;
+}
+
+.entry-title, .post-edit-link, #masthead {
 	display: none;
 }
 
@@ -60,3 +64,10 @@
 	flex-direction: column;
 	align-items: center;
 }
+
+.conteneur-evenements {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas: ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . ." ". . .";
+  }

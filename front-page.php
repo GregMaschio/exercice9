@@ -75,14 +75,15 @@ get_header();
         while ( $query2->have_posts() ) {
             echo '<div class ="posts-nouvelles">';
             $query2->the_post();
-            echo '<h3> <a href ="'. get_permalink($id) . '">' . get_the_title( $query2->post->ID ) . '</a></h3>';
+            echo '<h3> <a href ="'. get_permalink($id) . '">' . substr(get_the_title( $query2->post->ID ),0,15) . '</a></h3>';
             the_post_thumbnail('thumbnail');
             echo '</div>';
         }
         echo '</div>';
         // Restore original Post Data
         wp_reset_postdata();
-		?>
+        ?>
+        
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
