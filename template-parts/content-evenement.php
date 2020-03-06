@@ -4,6 +4,10 @@
 echo '<h1>' . category_description(get_category_by_slug('evenement')) . '</h1>';        
 /* The 2nd Query (without global var) */
 $args3 = array(
+    "date_query" => array(
+        'after' =>"October 1st 2019",
+        'before' =>"December 1st 2019"
+    ),
     "category_name" => "evenement",
     "posts_per_page" => -1,
     "orderby" =>"date",
